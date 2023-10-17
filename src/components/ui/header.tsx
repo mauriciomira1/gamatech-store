@@ -22,9 +22,7 @@ const Header = () => {
             </Button>
           </SheetTrigger>
           <SheetContent side="left">
-            <SheetHeader className="text-left text-lg font-semibold">
-              Menu
-            </SheetHeader>
+            <SheetHeader className="text-left font-semibold">Menu</SheetHeader>
             <div className="mt-2 flex flex-col gap-3">
               <Button variant="outline" className="w-full justify-start gap-2">
                 <LogInIcon size={16} /> Fazer login
