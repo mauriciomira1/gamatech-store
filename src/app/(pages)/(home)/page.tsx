@@ -1,7 +1,17 @@
+import { prismaClient } from "@/lib/prisma";
 import Banner from "./components/banner";
-import Categories from "./components/categories";
+import Carousel from "./components/Carousel";
+import Categories from "./components/Categories";
 
-export default function Home() {
+export default async function Home() {
+  const dealsProducts = await prismaClient.product.findMany({
+    where: {
+      discountPercentage: {
+        gt: 0,
+      },
+    },
+  });
+
   return (
     <div className="flex w-full flex-col gap-7">
       <div className="pt-7">
@@ -11,6 +21,7 @@ export default function Home() {
         />
       </div>
       <Categories />
+      <Carousel products={dealsProducts} />
     </div>
   );
 }
