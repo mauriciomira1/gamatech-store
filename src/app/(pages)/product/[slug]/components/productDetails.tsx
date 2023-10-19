@@ -1,8 +1,10 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import DiscountBadge from "@/components/ui/discountBadge";
+
 import { ComputeProductTotalPriceProps } from "@/helpers/product";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+
 import { useState } from "react";
 
 interface ProductDetailsProps {

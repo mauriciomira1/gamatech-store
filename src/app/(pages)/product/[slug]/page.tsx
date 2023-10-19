@@ -4,7 +4,7 @@ import { computeProductTotalPrice } from "@/helpers/product";
 
 import CarouselPhotos from "./components/carouselPhotos";
 import ProductDetails from "./components/productDetails";
-import TitleCarousel from "../../(home)/components/TitleCarousel";
+import TitleCarousel from "../../../../components/ui/TitleCarousel";
 import Cart from "./components/cart";
 import Carousel from "../../../../components/ui/Carousel";
 

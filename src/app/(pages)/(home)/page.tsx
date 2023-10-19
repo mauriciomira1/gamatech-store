@@ -2,7 +2,7 @@ import { prismaClient } from "@/lib/prisma";
 import Banner from "./components/banner";
 import Carousel from "../../../components/ui/Carousel";
 import Categories from "./components/Categories";
-import TitleCarousel from "./components/TitleCarousel";
+import TitleCarousel from "../../../components/ui/TitleCarousel";
 
 export default async function Home() {
   const dealsProducts = await prismaClient.product.findMany({
