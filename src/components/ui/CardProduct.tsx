@@ -3,14 +3,14 @@ import { Product } from "@prisma/client";
 import { ArrowDown } from "lucide-react";
 import Image from "next/image";
 
-interface CarouselItemProps {
+interface CardProductProps {
   product: Product;
 }
 
-const CarouselItem = ({ product }: CarouselItemProps) => {
+const CardProduct = ({ product }: CardProductProps) => {
   return (
-    <div className="relative w-[156px]">
-      <div className="flex h-[170px] w-[156px] items-center justify-center rounded-lg bg-accent">
+    <div className="relative w-full min-w-[156px] ">
+      <div className="flex h-[170px] w-full min-w-[156px] items-center justify-center rounded-lg bg-accent">
         <Image
           src={product.imageUrls[0]}
           alt={product.name}
@@ -31,7 +31,7 @@ const CarouselItem = ({ product }: CarouselItemProps) => {
           </div>
         )}
       </div>
-      <div className="flex flex-col gap-0.5">
+      <div className="mt-2 flex flex-col gap-0.5">
         <p className="overflow-hidden text-ellipsis whitespace-nowrap text-xs">
           {product.name}
         </p>
@@ -56,4 +56,4 @@ const CarouselItem = ({ product }: CarouselItemProps) => {
   );
 };
 
-export default CarouselItem;
+export default CardProduct;
