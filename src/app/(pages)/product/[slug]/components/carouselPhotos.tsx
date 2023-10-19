@@ -21,6 +21,10 @@ const CarouselPhotos = ({ imageUrls, name }: CarouselPhotosProps) => {
           height={0}
           sizes="100vw"
           className="h-auto max-h-[80%] w-full max-w-[70%]"
+          style={{
+            objectFit: "contain",
+          }}
+          priority
         />
       </div>
 
@@ -40,7 +44,9 @@ const CarouselPhotos = ({ imageUrls, name }: CarouselPhotosProps) => {
               height={0}
               sizes="100vw"
               className="h-full max-h-[70%] w-auto"
-              objectFit="contain"
+              style={{
+                objectFit: "contain",
+              }}
             />
           </div>
         ))}
