@@ -9,7 +9,7 @@ interface CartmenuItemProps {
 }
 
 const CartmenuItem = ({ product }: CartmenuItemProps) => {
-  const { addOne, decreaseOne } = useContext(CartContext);
+  const { addOne, decreaseOne, removeProduct } = useContext(CartContext);
 
   return (
     <div className="flex items-center justify-between">
@@ -57,7 +57,7 @@ const CartmenuItem = ({ product }: CartmenuItemProps) => {
         </div>
       </div>
       <div>
-        <TrashIcon />
+        <TrashIcon onClick={() => removeProduct(product)} />
       </div>
     </div>
   );
