@@ -1,8 +1,11 @@
-import { computeProductTotalPrice } from "@/helpers/product";
+import {
+  ComputeProductTotalPriceProps,
+  computeProductTotalPrice,
+} from "@/helpers/product";
 import { Product } from "@prisma/client";
-import { ArrowDown } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import DiscountBadge from "./discountBadge";
 
 interface CardProductProps {
   product: Product;
@@ -25,12 +28,9 @@ const CardProduct = ({ product }: CardProductProps) => {
             }}
           />
           {product.discountPercentage > 0 && (
-            <div className="absolute left-2 top-2 flex rounded-full bg-[#5033C3] py-1 pl-2 pr-3">
-              <ArrowDown size={14} />
-              <span className="text-xs font-bold">
-                {product.discountPercentage}%
-              </span>
-            </div>
+            <DiscountBadge className="absolute left-2 top-2">
+              {product.discountPercentage}
+            </DiscountBadge>
           )}
         </div>
         <div className="mt-2 flex flex-col gap-0.5">
@@ -41,7 +41,7 @@ const CardProduct = ({ product }: CardProductProps) => {
             {product.discountPercentage > 0 ? (
               <>
                 <p className="text-sm font-bold">
-                  R$ {computeProductTotalPrice(product)}
+                  R$ {computeProductTotalPrice(product).totalPrice}
                 </p>
                 <p className="text-xs line-through opacity-50">
                   R$ {product.basePrice.toFixed(2)}

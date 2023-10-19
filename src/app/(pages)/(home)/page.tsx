@@ -1,6 +1,6 @@
 import { prismaClient } from "@/lib/prisma";
 import Banner from "./components/banner";
-import Carousel from "./components/Carousel";
+import Carousel from "../../../components/ui/Carousel";
 import Categories from "./components/Categories";
 import TitleCarousel from "./components/TitleCarousel";
 

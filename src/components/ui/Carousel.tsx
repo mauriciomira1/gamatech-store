@@ -1,5 +1,5 @@
 import React from "react";
-import CardProduct from "../../../../components/ui/CardProduct";
+import CardProduct from "./CardProduct";
 import { Product } from "@prisma/client";
 
 interface CarouselProps {
