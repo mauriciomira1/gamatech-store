@@ -13,7 +13,7 @@ const CarouselPhotos = ({ imageUrls, name }: CarouselPhotosProps) => {
 
   return (
     <div className="flex flex-col items-center">
-      <div className="flex flex-col items-center justify-center bg-accent">
+      <div className="flex min-h-[380px] flex-col items-center justify-center bg-accent">
         <Image
           src={image}
           alt={name}
@@ -28,7 +28,7 @@ const CarouselPhotos = ({ imageUrls, name }: CarouselPhotosProps) => {
         {imageUrls.map((imageUrl) => (
           <div
             key={imageUrl}
-            className={`flex h-auto w-full items-center justify-center rounded-lg bg-accent ${
+            className={`mt-4 flex h-auto w-full items-center justify-center rounded-lg bg-accent ${
               image === imageUrl && "border border-primary"
             }`}
             onClick={() => setImage(imageUrl)}
