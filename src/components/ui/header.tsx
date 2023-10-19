@@ -10,7 +10,13 @@ import {
 } from "lucide-react";
 import { Button } from "./button";
 import { Card } from "./card";
-import { Sheet, SheetContent, SheetHeader, SheetTrigger } from "./sheet";
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetHeader,
+  SheetTrigger,
+} from "./sheet";
 import { signIn, signOut, useSession } from "next-auth/react";
 import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
 import { Separator } from "@radix-ui/react-separator";
@@ -79,32 +85,38 @@ const Header = () => {
                   <LogOutIcon size={16} /> Fazer logout
                 </Button>
               )}
-              <Link href="/">
-                <Button
-                  variant="outline"
-                  className="w-full justify-start gap-2"
-                >
-                  <HomeIcon size={16} /> Home
-                </Button>
-              </Link>
+              <SheetClose asChild>
+                <Link href="/">
+                  <Button
+                    variant="outline"
+                    className="w-full justify-start gap-2"
+                  >
+                    <HomeIcon size={16} /> Home
+                  </Button>
+                </Link>
+              </SheetClose>
 
-              <Link href="/deals">
-                <Button
-                  variant="outline"
-                  className="w-full justify-start gap-2"
-                >
-                  <PercentIcon size={16} /> Ofertas
-                </Button>
-              </Link>
+              <SheetClose asChild>
+                <Link href="/deals">
+                  <Button
+                    variant="outline"
+                    className="w-full justify-start gap-2"
+                  >
+                    <PercentIcon size={16} /> Ofertas
+                  </Button>
+                </Link>
+              </SheetClose>
 
-              <Link href="/catalog">
-                <Button
-                  variant="outline"
-                  className="w-full justify-start gap-2"
-                >
-                  <ListOrderedIcon size={16} /> Catálogo
-                </Button>
-              </Link>
+              <SheetClose asChild>
+                <Link href="/catalog">
+                  <Button
+                    variant="outline"
+                    className="w-full justify-start gap-2"
+                  >
+                    <ListOrderedIcon size={16} /> Catálogo
+                  </Button>
+                </Link>
+              </SheetClose>
             </div>
           </SheetContent>
         </Sheet>
