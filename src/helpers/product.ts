@@ -1,12 +1,12 @@
 import { Product } from "@prisma/client";
 
-export interface ComputeProductTotalPriceProps extends Product {
+export interface ProductWithTotalPriceProps extends Product {
   totalPrice: number;
 }
 
-export const computeProductTotalPrice = (
+export const ProductWithTotalPrice = (
   product: Product,
-): ComputeProductTotalPriceProps => {
+): ProductWithTotalPriceProps => {
   if (product.discountPercentage > 0) {
     return {
       ...product,

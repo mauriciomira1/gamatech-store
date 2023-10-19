@@ -1,11 +1,10 @@
 import { prismaClient } from "@/lib/prisma";
 import { Params } from "next/dist/shared/lib/router/utils/route-matcher";
-import { computeProductTotalPrice } from "@/helpers/product";
+import { ProductWithTotalPrice } from "@/helpers/product";
 
 import CarouselPhotos from "./components/carouselPhotos";
 import ProductDetails from "./components/productDetails";
 import TitleCarousel from "../../../../components/ui/TitleCarousel";
-import Cart from "./components/cart";
 import Carousel from "../../../../components/ui/Carousel";
 
 const ProductDetailsPage = async ({ params }: Params) => {
@@ -40,8 +39,7 @@ const ProductDetailsPage = async ({ params }: Params) => {
     product && (
       <div className="flex w-full flex-col items-center">
         <CarouselPhotos name={product?.name} imageUrls={product?.imageUrls} />
-        <ProductDetails product={computeProductTotalPrice(product)} />
-        <Cart />
+        <ProductDetails product={ProductWithTotalPrice(product)} />
         <div className="mt-10 flex w-full flex-col justify-start">
           <TitleCarousel title="Produtos Recomendados" />
           <Carousel products={recommended.category.products} />

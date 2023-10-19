@@ -21,6 +21,7 @@ import { signIn, signOut, useSession } from "next-auth/react";
 import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
 import { Separator } from "@radix-ui/react-separator";
 import Link from "next/link";
+import Cartmenu from "./cartmenu";
 
 const Header = () => {
   const handleLoginClick = async () => {
@@ -122,14 +123,19 @@ const Header = () => {
         </Sheet>
 
         <Link href="/">
-          {" "}
           <h1 className="text-lg font-semibold">
             <span className="font-bold text-primary">TechGama</span> Store
           </h1>
         </Link>
-        <Button size="icon" variant="outline">
-          <ShoppingCart />
-        </Button>
+
+        <Sheet>
+          <SheetTrigger asChild>
+            <Button size="icon" variant="outline">
+              <ShoppingCart />
+            </Button>
+          </SheetTrigger>
+          <Cartmenu />
+        </Sheet>
       </Card>
     </div>
   );

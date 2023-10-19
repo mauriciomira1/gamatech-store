@@ -1,4 +1,4 @@
-import { computeProductTotalPrice } from "@/helpers/product";
+import { ProductWithTotalPrice } from "@/helpers/product";
 import { Product } from "@prisma/client";
 import Image from "next/image";
 import Link from "next/link";
@@ -38,7 +38,7 @@ const CardProduct = ({ product }: CardProductProps) => {
             {product.discountPercentage > 0 ? (
               <>
                 <p className="text-sm font-bold">
-                  R$ {computeProductTotalPrice(product).totalPrice}
+                  R$ {ProductWithTotalPrice(product).totalPrice}
                 </p>
                 <p className="text-xs line-through opacity-50">
                   R$ {product.basePrice.toFixed(2)}
