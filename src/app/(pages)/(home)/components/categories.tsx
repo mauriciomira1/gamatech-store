@@ -1,5 +1,6 @@
 import { prismaClient } from "@/lib/prisma";
 import CategoriesItem from "./categoriesItem";
+import Link from "next/link";
 
 const Categories = async () => {
   const categories = await prismaClient.category.findMany({});
@@ -7,7 +8,11 @@ const Categories = async () => {
   return (
     <div className="grid grid-cols-2 gap-x-2 gap-y-3 px-5">
       {categories.map((category) => {
-        return <CategoriesItem key={category.id} category={category} />;
+        return (
+          <Link href={`/category/${category.slug}`} key={category.id}>
+            <CategoriesItem category={category} />
+          </Link>
+        );
       })}
     </div>
   );

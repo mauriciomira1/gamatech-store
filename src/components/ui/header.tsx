@@ -121,9 +121,12 @@ const Header = () => {
           </SheetContent>
         </Sheet>
 
-        <h1 className="text-lg font-semibold">
-          <span className="text-primary">TechGama</span> Store
-        </h1>
+        <Link href="/">
+          {" "}
+          <h1 className="text-lg font-semibold">
+            <span className="text-primary">TechGama</span> Store
+          </h1>
+        </Link>
         <Button size="icon" variant="outline">
           <ShoppingCart />
         </Button>
