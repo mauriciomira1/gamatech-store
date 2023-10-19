@@ -1,5 +1,6 @@
 import { computeProductTotalPrice } from "@/helpers/product";
 import { Product } from "@prisma/client";
+import { ArrowDown } from "lucide-react";
 import Image from "next/image";
 
 interface CarouselItemProps {
@@ -8,8 +9,8 @@ interface CarouselItemProps {
 
 const CarouselItem = ({ product }: CarouselItemProps) => {
   return (
-    <div className="w-[156px]">
-      <div className="flex h-[170px] items-center justify-center rounded-lg bg-accent">
+    <div className="relative w-[156px]">
+      <div className="flex h-[170px] w-[156px] items-center justify-center rounded-lg bg-accent">
         <Image
           src={product.imageUrls[0]}
           alt={product.name}
@@ -21,6 +22,14 @@ const CarouselItem = ({ product }: CarouselItemProps) => {
             objectFit: "contain",
           }}
         />
+        {product.discountPercentage > 0 && (
+          <div className="absolute left-2 top-2 flex rounded-full bg-[#5033C3] py-1 pl-2 pr-3">
+            <ArrowDown size={14} />
+            <span className="text-xs font-bold">
+              {product.discountPercentage}%
+            </span>
+          </div>
+        )}
       </div>
       <div className="flex flex-col gap-0.5">
         <p className="overflow-hidden text-ellipsis whitespace-nowrap text-xs">
@@ -30,7 +39,7 @@ const CarouselItem = ({ product }: CarouselItemProps) => {
           {product.discountPercentage > 0 ? (
             <>
               <p className="text-sm font-bold">
-                {computeProductTotalPrice(product)}
+                R$ {computeProductTotalPrice(product)}
               </p>
               <p className="text-xs line-through opacity-50">
                 R$ {product.basePrice.toFixed(2)}
