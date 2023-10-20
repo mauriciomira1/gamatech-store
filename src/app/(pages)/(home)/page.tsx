@@ -2,6 +2,7 @@ import { prismaClient } from "@/lib/prisma";
 import Banner from "./components/banner";
 import Carousel from "../../../components/ui/Carousel";
 import TitleCarousel from "../../../components/ui/TitleCarousel";
+import Categories from "./components/categories";
 
 export default async function Home() {
   const dealsProducts = await prismaClient.product.findMany({
@@ -39,6 +40,8 @@ export default async function Home() {
         <TitleCarousel title="Ofertas" />
         <Carousel products={dealsProducts} />
       </div>
+
+      <Categories />
 
       <Banner src="/banner-home-02.png" alt="Até 55% de desconto em mouses" />
 
