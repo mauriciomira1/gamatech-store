@@ -2,17 +2,17 @@
 import { Button } from "@/components/ui/button";
 import DiscountBadge from "@/components/ui/discountBadge";
 
-import { ComputeProductTotalPriceProps } from "@/helpers/product";
+import { ProductWithTotalPriceProps } from "@/helpers/product";
 import { CartContext } from "@/providers/cart";
 import { ChevronLeft, ChevronRight, TruckIcon } from "lucide-react";
 
 import { useContext, useState } from "react";
 
 interface ProductDetailsProps {
-  product: ComputeProductTotalPriceProps;
+  product: ProductWithTotalPriceProps;
 }
 
-interface ProductWithQuantityProps extends ComputeProductTotalPriceProps {
+interface ProductWithQuantityProps extends ProductWithTotalPriceProps {
   quantity: number;
 }
 
