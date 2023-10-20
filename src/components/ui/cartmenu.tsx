@@ -16,7 +16,7 @@ const Cartmenu = () => {
           variant="outline"
         >
           <ShoppingBagIcon />
-          <p className="font-bold uppercase">meus pedidos</p>
+          <p className="font-bold uppercase">CARRINHO</p>
         </Badge>
       </div>
       {products.map((product) => (
