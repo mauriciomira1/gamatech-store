@@ -6,9 +6,22 @@ import { Badge } from "./badge";
 import CartmenuItem from "./cartmenuItem";
 import { Separator } from "./separator";
 import { ScrollArea } from "./scroll-area";
+import { Button } from "./button";
+import { createCheckout } from "@/actions/checkout";
+import { loadStripe } from "@stripe/stripe-js";
 
 const Cartmenu = () => {
   const { products, subtotal, total, cartDiscount } = useContext(CartContext);
+
+  const handlePurchase = async () => {
+    const checkout = await createCheckout(products);
+
+    const stripe = await loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY);
+
+    stripe?.redirectToCheckout({
+      sessionId: checkout.id,
+    });
+  };
 
   return (
     <SheetContent className="flex flex-col justify-between">
@@ -53,6 +66,12 @@ const Cartmenu = () => {
               <p>Total</p>
               <p>R$ {total.toFixed(2)}</p>
             </div>
+            <Button
+              className="h-18 mt-4 font-bold uppercase"
+              onClick={handlePurchase}
+            >
+              Finalizar compra
+            </Button>
           </div>
         </div>
       ) : (
