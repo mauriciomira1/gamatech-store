@@ -9,9 +9,8 @@ import {
   SpeakerIcon,
   SquareIcon,
 } from "lucide-react";
-import { Params } from "next/dist/shared/lib/router/utils/route-matcher";
 
-const CategoryProducts = async ({ params }: Params) => {
+const CategoryProducts = async ({ params }: any) => {
   const categoryIcon = {
     keyboards: <KeyboardIcon size={16} />,
     mouses: <MouseIcon size={16} />,
