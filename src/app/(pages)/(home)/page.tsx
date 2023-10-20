@@ -36,12 +36,12 @@ export default async function Home() {
         />
       </div>
 
+      <Categories />
+
       <div>
         <TitleCarousel title="Ofertas" />
         <Carousel products={dealsProducts} />
       </div>
-
-      <Categories />
 
       <Banner src="/banner-home-02.png" alt="Até 55% de desconto em mouses" />
 
