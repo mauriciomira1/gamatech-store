@@ -7,7 +7,7 @@ import ProductDetails from "./components/productDetails";
 import TitleCarousel from "../../../../components/ui/TitleCarousel";
 import Carousel from "../../../../components/ui/Carousel";
 
-const ProductDetailsPage = async ({ params }: Params) => {
+const ProductDetailsPage = async ({ params }: any) => {
   const product = await prismaClient.product.findFirst({
     where: {
       slug: params.slug,
