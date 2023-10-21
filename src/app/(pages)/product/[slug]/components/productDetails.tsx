@@ -1,6 +1,8 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import DiscountBadge from "@/components/ui/discountBadge";
+import { Toaster } from "@/components/ui/toaster";
+import { useToast } from "@/components/ui/use-toast";
 
 import { ProductWithTotalPriceProps } from "@/helpers/product";
 import { CartContext } from "@/providers/cart";
@@ -18,6 +20,7 @@ interface ProductWithQuantityProps extends ProductWithTotalPriceProps {
 
 const ProductDetails = ({ product }: ProductDetailsProps) => {
   const [quantity, setQuantity] = useState(1);
+  const { toast } = useToast();
 
   const { addToCart } = useContext(CartContext);
 
@@ -30,6 +33,16 @@ const ProductDetails = ({ product }: ProductDetailsProps) => {
   };
 
   const addProductToCart = (product: ProductWithQuantityProps) => {
+    toast({
+      title: `Adicionado ao carrinho.`,
+      duration: 800,
+      style: {
+        backgroundColor: "rgb(22 163 74)",
+        marginLeft: "-60px",
+        width: "250px",
+        borderColor: "rgb(22 163 44)",
+      },
+    });
     return addToCart(product);
   };
 
@@ -94,6 +107,9 @@ const ProductDetails = ({ product }: ProductDetailsProps) => {
           </div>
           <p className="text-[11px] font-bold">Frete Grátis</p>
         </div>
+      </div>
+      <div>
+        <Toaster />
       </div>
     </>
   );
