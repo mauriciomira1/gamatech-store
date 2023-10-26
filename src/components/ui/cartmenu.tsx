@@ -6,9 +6,9 @@ import { Badge } from "./badge";
 import CartmenuItem from "./cartmenuItem";
 import { Separator } from "./separator";
 import { ScrollArea } from "./scroll-area";
-import { Button } from "./button";
 import { createCheckout } from "@/actions/checkout";
 import { loadStripe } from "@stripe/stripe-js";
+import { Button } from "./button";
 
 const Cartmenu = () => {
   const { products, subtotal, total, cartDiscount } = useContext(CartContext);
