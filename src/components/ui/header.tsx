@@ -127,7 +127,7 @@ const Header = () => {
 
         <Link href="/">
           <h1 className="text-lg font-semibold">
-            <span className="font-bold text-primary">TechGama</span> Store
+            <span className="font-bold text-primary">GamaTech</span> Store
           </h1>
         </Link>
 
