@@ -6,7 +6,7 @@ import {
 } from "@/components/ui/accordion";
 import { Card } from "@/components/ui/card";
 import { Prisma } from "@prisma/client";
-import { format, sub } from "date-fns";
+import { format } from "date-fns";
 import OrderProductCard from "./orderProductCard";
 import { ProductWithTotalPrice } from "@/helpers/product";
 import { useMemo } from "react";
@@ -51,7 +51,10 @@ const Orderitem = ({ order }: OrderItemProps) => {
           <AccordionItem value={order.id}>
             <AccordionTrigger>
               <div className="flex flex-col gap-1 text-left">
-                Pedido com {order.orderProducts.length} produto(s)
+                <p>Pedido com {order.orderProducts.length} produto(s)</p>
+                <p className="text-xs opacity-50">
+                  Compra de {format(order.createdAt, "dd/MM/y 'às' HH:mm")}
+                </p>
               </div>
             </AccordionTrigger>
             <AccordionContent>

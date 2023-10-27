@@ -1,5 +1,5 @@
 import { ProductWithTotalPrice } from "@/helpers/product";
-import { OrderProduct, Prisma, Product } from "@prisma/client";
+import { Prisma } from "@prisma/client";
 import Image from "next/image";
 
 interface OrderProductCardProps {
