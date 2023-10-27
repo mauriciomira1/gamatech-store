@@ -22,6 +22,8 @@ import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
 import { Separator } from "@radix-ui/react-separator";
 import Link from "next/link";
 import Cartmenu from "./cartmenu";
+import { useContext } from "react";
+import { CartContext } from "@/providers/cart";
 
 const Header = () => {
   const handleLoginClick = async () => {
@@ -32,6 +34,7 @@ const Header = () => {
   };
 
   const { status, data } = useSession();
+  const { products } = useContext(CartContext);
 
   return (
     <div>
@@ -130,8 +133,13 @@ const Header = () => {
 
         <Sheet>
           <SheetTrigger asChild>
-            <Button size="icon" variant="outline">
+            <Button size="icon" variant="outline" className="relative">
               <ShoppingCart />
+              {products.length > 0 && (
+                <div className="absolute -right-2 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-red-700 text-xs font-bold">
+                  <span>{products.length}</span>
+                </div>
+              )}
             </Button>
           </SheetTrigger>
           <Cartmenu />
