@@ -36,14 +36,11 @@ export const CartContext = createContext<ICartContext>({
 
 const CartProvider = ({ children }: { children: ReactNode }) => {
   const [products, setProducts] = useState<CartProduct[]>(
-    JSON.parse(localStorage.getItem("@gamatech-store/cart-products") || "[]"),
+    JSON.parse(localStorage.getItem("gamaTechStore") || "[]"),
   );
 
   useEffect(() => {
-    localStorage.setItem(
-      "@gamatech-store/cart-products",
-      JSON.stringify(products),
-    );
+    localStorage.setItem("gamaTechStore", JSON.stringify(products));
   }, [products]);
 
   const addToCart = (product: CartProduct) => {
