@@ -12,8 +12,10 @@ export const createCheckout = async (products: CartProduct[]) => {
   const checkout = await stripe.checkout.sessions.create({
     payment_method_types: ["card"],
     mode: "payment",
-    success_url: "http://localhost:3000/checkout/success",
-    cancel_url: "http://localhost:3000/checkout/cancelled",
+    success_url:
+      "https://gamatech-store-9obtm9pth-mauriciomira1.vercel.app/checkout/success",
+    cancel_url:
+      "https://gamatech-store-9obtm9pth-mauriciomira1.vercel.app/checkout/cancelled",
 
     line_items: products.map((product) => {
       return {
