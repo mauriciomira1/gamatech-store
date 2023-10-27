@@ -34,6 +34,7 @@ export default async function Home() {
         <Banner
           src="/banner-home-01.png"
           alt="Até 55% de desconto só esse mês"
+          priority
         />
       </div>
 

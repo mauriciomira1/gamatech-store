@@ -8,10 +8,8 @@ import { Card } from "@/components/ui/card";
 import { Prisma } from "@prisma/client";
 import { format, sub } from "date-fns";
 import OrderProductCard from "./orderProductCard";
-import {
-  ProductWithTotalPrice,
-  ProductWithTotalPriceProps,
-} from "@/helpers/product";
+import { ProductWithTotalPrice } from "@/helpers/product";
+import { useMemo } from "react";
 
 interface OrderItemProps {
   order: Prisma.OrderGetPayload<{
@@ -26,18 +24,25 @@ interface OrderItemProps {
 }
 
 const Orderitem = ({ order }: OrderItemProps) => {
-  const subtotal = order.orderProducts.reduce(
-    (acc, current) => acc + Number(current.basePrice),
-    0,
-  );
+  const subtotal = useMemo(() => {
+    return order.orderProducts.reduce(
+      (acc, current) => acc + Number(current.basePrice) * current.quantity,
+      0,
+    );
+  }, [order.orderProducts]);
 
-  const total = order.orderProducts.reduce(
-    (acc, current) =>
-      acc + Number(ProductWithTotalPrice(current.product).totalPrice),
-    0,
-  );
+  const total = useMemo(() => {
+    return order.orderProducts.reduce(
+      (acc, current) =>
+        acc +
+        Number(
+          ProductWithTotalPrice(current.product).totalPrice * current.quantity,
+        ),
+      0,
+    );
+  }, [order.orderProducts]);
 
-  const totalDiscount = subtotal - total;
+  const totalDiscount = Number(subtotal) - Number(total);
 
   return (
     <div>
@@ -55,7 +60,7 @@ const Orderitem = ({ order }: OrderItemProps) => {
                   <span className="font-bold">STATUS</span>
 
                   {order.status === "WAITING_FOR_PAYMENT" ? (
-                    <span className="font-bold text-red-600">Pendente</span>
+                    <span className="font-bold text-gray-600">Pendente</span>
                   ) : (
                     <span className="font-bold text-[#8162FF]">Pago</span>
                   )}
@@ -83,7 +88,7 @@ const Orderitem = ({ order }: OrderItemProps) => {
                   />
                 ))}
               </div>
-              <div>
+              <div className="pt-5">
                 <hr className="my-3" />
                 <div className="flex justify-between">
                   <span>Subtotal</span>
