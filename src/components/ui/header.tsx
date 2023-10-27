@@ -136,7 +136,7 @@ const Header = () => {
             <Button size="icon" variant="outline" className="relative">
               <ShoppingCart />
               {products.length > 0 && (
-                <div className="absolute -right-2 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-red-700 text-xs font-bold">
+                <div className="absolute -right-2 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-red-600 text-xs font-bold">
                   <span>{products.length}</span>
                 </div>
               )}
