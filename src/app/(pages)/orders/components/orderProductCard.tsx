@@ -12,7 +12,7 @@ interface OrderProductCardProps {
 
 const OrderProductCard = ({ orderProduct }: OrderProductCardProps) => {
   return (
-    <div className="flex w-full gap-3 py-2">
+    <div className="flex w-full gap-3 py-4">
       <div className="flex h-[90px] w-1/4 items-center justify-center rounded-xl bg-secondary">
         <Image
           src={orderProduct.product.imageUrls[0]}
@@ -25,7 +25,7 @@ const OrderProductCard = ({ orderProduct }: OrderProductCardProps) => {
       </div>
       <div className="flex w-3/4 flex-col gap-2">
         <span className="rounded-lg bg-secondary px-3 py-1 text-center text-xs font-thin">
-          Vendido por <span className="font-bold">GT Store</span>
+          Vendido e entregue por <span className="font-bold">GT Store</span>
         </span>
         <span>{orderProduct.product.name}</span>
         <div className="flex w-full items-baseline justify-between">
@@ -37,7 +37,7 @@ const OrderProductCard = ({ orderProduct }: OrderProductCardProps) => {
               )}
             </span>
             <span className="text-sm line-through opacity-60">
-              R$ {Number(orderProduct.product.basePrice.toFixed(8, 2))}
+              R$ {Number(orderProduct.product.basePrice)}
             </span>
           </div>
           <span>Qtd: {orderProduct.quantity}</span>
