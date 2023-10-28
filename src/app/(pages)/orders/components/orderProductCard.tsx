@@ -30,15 +30,23 @@ const OrderProductCard = ({ orderProduct }: OrderProductCardProps) => {
         <span>{orderProduct.product.name}</span>
         <div className="flex w-full items-baseline justify-between">
           <div className="flex items-baseline gap-1">
-            <span className="text-lg font-bold">
-              R${" "}
-              {ProductWithTotalPrice(orderProduct.product).totalPrice.toFixed(
-                2,
-              )}
-            </span>
-            <span className="text-sm line-through opacity-60">
-              R$ {Number(orderProduct.product.basePrice)}
-            </span>
+            {orderProduct.discountPercentage > 0 ? (
+              <>
+                <span className="text-lg font-bold">
+                  R${" "}
+                  {ProductWithTotalPrice(
+                    orderProduct.product,
+                  ).totalPrice.toFixed(2)}
+                </span>
+                <span className="text-sm line-through opacity-60">
+                  R$ {orderProduct.product.basePrice.toFixed(2)}
+                </span>
+              </>
+            ) : (
+              <span className="text-lg font-bold">
+                R$ {orderProduct.product.basePrice.toFixed(2)}
+              </span>
+            )}
           </div>
           <span>Qtd: {orderProduct.quantity}</span>
         </div>

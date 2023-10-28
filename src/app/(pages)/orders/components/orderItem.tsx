@@ -35,14 +35,13 @@ const Orderitem = ({ order }: OrderItemProps) => {
     return order.orderProducts.reduce(
       (acc, current) =>
         acc +
-        Number(
-          ProductWithTotalPrice(current.product).totalPrice * current.quantity,
-        ),
+        ProductWithTotalPrice(current.product).totalPrice * current.quantity,
+
       0,
     );
   }, [order.orderProducts]);
 
-  const totalDiscount = Number(subtotal) - Number(total);
+  const totalDiscount = subtotal - total;
 
   return (
     <div>
@@ -62,11 +61,11 @@ const Orderitem = ({ order }: OrderItemProps) => {
                 <div className="flex flex-col text-left">
                   <span className="font-bold">STATUS</span>
 
-                  {/* {order.status === "WAITING_FOR_PAYMENT" ? (
-                    <span className="font-bold text-gray-600">Aguardando Pagamento</span>
+                  {order.status === "WAITING_FOR_PAYMENT" ? (
+                    <span className="font-bold text-gray-600">Pendente</span>
                   ) : (
                     <span className="font-bold text-[#8162FF]">Pago</span>
-                  )} */}
+                  )}
                 </div>
 
                 <div className="flex flex-col text-left">
