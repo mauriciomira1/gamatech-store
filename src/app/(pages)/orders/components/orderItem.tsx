@@ -62,11 +62,11 @@ const Orderitem = ({ order }: OrderItemProps) => {
                 <div className="flex flex-col text-left">
                   <span className="font-bold">STATUS</span>
 
-                  {order.status === "WAITING_FOR_PAYMENT" ? (
-                    <span className="font-bold text-gray-600">Pendente</span>
+                  {/* {order.status === "WAITING_FOR_PAYMENT" ? (
+                    <span className="font-bold text-gray-600">Aguardando Pagamento</span>
                   ) : (
                     <span className="font-bold text-[#8162FF]">Pago</span>
-                  )}
+                  )} */}
                 </div>
 
                 <div className="flex flex-col text-left">
