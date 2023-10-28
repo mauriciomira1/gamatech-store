@@ -5,6 +5,8 @@ import { PackageSearchIcon } from "lucide-react";
 import { getServerSession } from "next-auth";
 import Orderitem from "./components/orderItem";
 
+export const dynamic = "force-dynamic";
+
 const OrderPage = async () => {
   const user = getServerSession(authOptions);
 
