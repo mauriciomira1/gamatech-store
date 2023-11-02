@@ -1,16 +1,17 @@
-import { useContext } from "react";
-import { SheetContent } from "./sheet";
-import { CartContext } from "@/providers/cart";
 import { ShoppingBagIcon, ShoppingCartIcon } from "lucide-react";
 import { Badge } from "./badge";
 import CartmenuItem from "./cartmenuItem";
 import { Separator } from "./separator";
-import { ScrollArea } from "./scroll-area";
-import { createCheckout } from "@/actions/checkout";
-import { loadStripe } from "@stripe/stripe-js";
 import { Button } from "./button";
-import createOrder from "@/actions/order";
+import { ScrollArea } from "./scroll-area";
+
+import { SheetContent } from "./sheet";
+import { CartContext } from "@/providers/cart";
+import { useContext } from "react";
 import { useSession } from "next-auth/react";
+import { loadStripe } from "@stripe/stripe-js";
+import { createCheckout } from "@/actions/checkout";
+import createOrder from "@/actions/order";
 
 const Cartmenu = () => {
   const { products, subtotal, total, cartDiscount } = useContext(CartContext);

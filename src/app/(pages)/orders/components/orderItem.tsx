@@ -1,3 +1,4 @@
+import DeleteButton from "./deleteButton";
 import {
   Accordion,
   AccordionContent,
@@ -5,11 +6,13 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card } from "@/components/ui/card";
+
+import { useMemo } from "react";
 import { Prisma } from "@prisma/client";
 import { format } from "date-fns";
-import OrderProductCard from "./orderProductCard";
+
 import { ProductWithTotalPrice } from "@/helpers/product";
-import { useMemo } from "react";
+import OrderProductCard from "./orderProductCard";
 
 interface OrderItemProps {
   order: Prisma.OrderGetPayload<{
@@ -42,6 +45,11 @@ const Orderitem = ({ order }: OrderItemProps) => {
   }, [order.orderProducts]);
 
   const totalDiscount = subtotal - total;
+
+  /* const handlePayment = async () => {
+    const stripe = await loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY);
+    const checkout = await createCheckout(order, order.id);
+  }; */
 
   return (
     <div>
@@ -82,6 +90,11 @@ const Orderitem = ({ order }: OrderItemProps) => {
                   <span className="opacity-60">Cartão</span>
                 </div>
               </div>
+
+              {order.status === "WAITING_FOR_PAYMENT" && (
+                <DeleteButton orderId={order.id} />
+              )}
+
               <hr className="my-5" />
 
               <div>
