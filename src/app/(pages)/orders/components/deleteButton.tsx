@@ -1,7 +1,6 @@
 "use client";
 import handleDeleteOrder from "@/actions/handleDeleteOrder";
 import { Button } from "@/components/ui/button";
-import { useEffect } from "react";
 
 interface DeleteButtonProps {
   orderId: string;

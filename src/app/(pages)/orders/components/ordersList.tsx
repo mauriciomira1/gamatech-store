@@ -1,4 +1,3 @@
-// Componente ainda não utilizado (a ideia é aplicá-lo à página de Order)
 "use client";
 import React, { useEffect, useState } from "react";
 import Orderitem from "./orderItem";
@@ -15,25 +14,16 @@ interface OrdersListProps {
     };
   }>;
 }
-/* interface OrdersListProps {
-  order: Prisma.OrderGetPayload<{
-    include: {
-      orderProducts: {
-        include: {
-          product: true;
-        };
-      };
-    };
-  }>;
-} */
 
-const OrdersList = ({ orders }: any) => {
-  const [newOrders, setNewOrders] = useState([]);
-  useEffect(() => {}, [orders]);
+const OrdersList = ({ orders }: { orders: any }) => {
+  const [currentOrders, setCurrentOrders] = useState(orders);
+  useEffect(() => {
+    setCurrentOrders(orders);
+  }, [orders]);
 
   return (
     <div className="flex flex-col gap-4 py-4">
-      {orders.map((currentOrder: any) => (
+      {currentOrders.map((currentOrder: any) => (
         <Orderitem key={currentOrder.order.id} order={currentOrder.order} />
       ))}
     </div>

@@ -4,6 +4,7 @@ import Carousel from "../../../components/ui/Carousel";
 import TitleCarousel from "../../../components/ui/TitleCarousel";
 import Categories from "./components/categories";
 import Link from "next/link";
+import BannersComputer from "./components/bannersComputer";
 
 export default async function Home() {
   const dealsProducts = await prismaClient.product.findMany({
@@ -30,36 +31,44 @@ export default async function Home() {
 
   return (
     <div className="flex w-full flex-col gap-7">
-      <div className="pt-7">
-        <Banner
-          src="/banner-home-01.png"
-          alt="Até 55% de desconto só esse mês"
-          priority
-        />
+      <div className="flex w-full items-center justify-center max-md:hidden">
+        <BannersComputer />
+      </div>
+      <div className="pt-7 md:hidden">
+        <Link href="/deals">
+          <Banner
+            src="/banner-home-01.png"
+            alt="Até 55% de desconto só esse mês"
+            priority
+          />
+        </Link>
       </div>
 
       <Categories />
 
-      <div>
+      <div className="md:pb-6">
         <Link href="/deals" className="inline-block">
           <TitleCarousel title="Ofertas" />
         </Link>
         <Carousel products={dealsProducts} />
       </div>
 
-      <Banner src="/banner-home-02.png" alt="Até 55% de desconto em mouses" />
+      <Link href="/category/mouses" className="md:hidden">
+        <Banner src="/banner-home-02.png" alt="Até 55% de desconto em mouses" />
+      </Link>
 
-      <div>
+      <div className="md:pb-6">
         <Link href="/keyboards" className="inline-block">
           <TitleCarousel title="Teclados" />
         </Link>
 
         <Carousel products={keyboards} />
       </div>
+      <Link href="/category/headphones" className="md:hidden">
+        <Banner src="/banner-home-03.png" alt="Até 20% de desconto em fones" />
+      </Link>
 
-      <Banner src="/banner-home-03.png" alt="Até 20% de desconto em fones" />
-
-      <div>
+      <div className="md:pb-6">
         <Link href="/mouses" className="inline-block">
           <TitleCarousel title="Mouses" />
         </Link>

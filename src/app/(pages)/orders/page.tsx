@@ -4,6 +4,7 @@ import { prismaClient } from "@/lib/prisma";
 import { PackageSearchIcon } from "lucide-react";
 import { getServerSession } from "next-auth";
 import Orderitem from "./components/orderItem";
+import OrdersList from "./components/ordersList";
 
 export const dynamic = "force-dynamic";
 
@@ -42,11 +43,12 @@ const OrderPage = async () => {
         <p className="font-bold uppercase">Meus pedidos</p>
       </Badge>
 
-      <div className="flex flex-col gap-4 py-4">
+      {/* <div className="flex flex-col gap-4 py-4">
         {orders.map((order) => (
           <Orderitem key={order.id} order={order} />
         ))}
-      </div>
+      </div> */}
+      <OrdersList orders={orders} />
     </div>
   );
 };

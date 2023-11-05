@@ -12,6 +12,7 @@ const CarouselPhotos = ({ imageUrls, name }: CarouselPhotosProps) => {
   const [image, setImage] = useState(imageUrls[0]);
 
   return (
+    // Foto grande
     <div className="flex flex-col items-center">
       <div className="flex min-h-[380px] flex-col items-center justify-center bg-accent">
         <Image
@@ -28,6 +29,7 @@ const CarouselPhotos = ({ imageUrls, name }: CarouselPhotosProps) => {
         />
       </div>
 
+      {/* // Carrossel */}
       <div className="mt-4 flex min-h-[77px] gap-4 px-4">
         {imageUrls.map((imageUrl) => (
           <div

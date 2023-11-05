@@ -19,7 +19,7 @@ const CardProduct = ({ product }: CardProductProps) => {
             width={0}
             height={0}
             sizes="100vw"
-            className="h-[100px] w-auto max-w-[90%]"
+            className="h-[100px] w-auto max-w-[90%] min-[900px]:max-w-[200px] lg:max-w-[200px]"
             style={{
               objectFit: "contain",
             }}

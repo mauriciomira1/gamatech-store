@@ -37,7 +37,7 @@ const ProductDetailsPage = async ({ params }: any) => {
 
   return (
     product && (
-      <div className="flex w-full flex-col items-center">
+      <div className="flex w-full flex-col items-center md:pt-10">
         <CarouselPhotos name={product?.name} imageUrls={product?.imageUrls} />
         <ProductDetails product={ProductWithTotalPrice(product)} />
         <div className="mt-10 flex w-full flex-col justify-start">
