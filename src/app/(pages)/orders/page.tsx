@@ -48,7 +48,7 @@ const OrderPage = async () => {
           <Orderitem key={order.id} order={order} />
         ))}
       </div>
-      {/* O componente abaixo ainda será implementado para substituir o mapeamento acima */}
+      {/* O componente abaixo está sendo implementado para substituir o mapeamento acima */}
       {/* <OrdersList orders={orders} /> */}
     </div>
   );

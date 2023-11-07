@@ -4,7 +4,8 @@ import Carousel from "../../../components/ui/Carousel";
 import TitleCarousel from "../../../components/ui/TitleCarousel";
 import Categories from "./components/categories";
 import Link from "next/link";
-import BannersComputer from "./components/bannersComputer";
+import BannersComputer from "./components/bannerComputer";
+import BannerPC from "./components/bannerPC";
 
 export default async function Home() {
   const dealsProducts = await prismaClient.product.findMany({
@@ -32,9 +33,9 @@ export default async function Home() {
   return (
     <div className="flex w-full flex-col gap-7">
       <div className="flex w-full items-center justify-center max-md:hidden">
-        <BannersComputer />
+        <BannerPC src="/pc-banner-home-01.jpg" alt="Ofertas" href="/deals" />
       </div>
-      <div className="pt-7 md:hidden">
+      {/* <div className="pt-7 md:hidden">
         <Link href="/deals">
           <Banner
             src="/banner-home-01.png"
@@ -42,7 +43,7 @@ export default async function Home() {
             priority
           />
         </Link>
-      </div>
+      </div> */}
 
       <Categories />
 
@@ -51,6 +52,14 @@ export default async function Home() {
           <TitleCarousel title="Ofertas" />
         </Link>
         <Carousel products={dealsProducts} />
+      </div>
+
+      <div className="flex w-full items-center justify-center max-md:hidden">
+        <BannerPC
+          src="/pc-banner-home-02.jpg"
+          alt="Ofertas em mouses"
+          href="/category/mouses"
+        />
       </div>
 
       <Link href="/category/mouses" className="md:hidden">
@@ -63,6 +72,14 @@ export default async function Home() {
         </Link>
 
         <Carousel products={keyboards} />
+      </div>
+
+      <div className="flex w-full items-center justify-center max-md:hidden">
+        <BannerPC
+          src="/pc-banner-home-03.jpg"
+          alt="Ofertas em fones de ouvido"
+          href="/category/headphones"
+        />
       </div>
       <Link href="/category/headphones" className="md:hidden">
         <Banner src="/banner-home-03.png" alt="Até 20% de desconto em fones" />
