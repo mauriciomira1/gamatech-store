@@ -12,16 +12,16 @@ const CarouselPhotos = ({ imageUrls, name }: CarouselPhotosProps) => {
   const [image, setImage] = useState(imageUrls[0]);
 
   return (
-    // Foto grande
+    // Foto de capa
     <div className="flex flex-col items-center">
-      <div className="flex min-h-[380px] flex-col items-center justify-center bg-accent">
+      <div className="flex min-h-[300px] w-96 flex-col items-center justify-center bg-accent max-sm:w-full sm:mt-6 sm:rounded">
         <Image
           src={image}
           alt={name}
           width={0}
           height={0}
           sizes="100vw"
-          className="h-auto max-h-[80%] w-full max-w-[70%]"
+          className="h-auto max-h-[80%] w-full lg:max-w-[70%]"
           style={{
             objectFit: "contain",
           }}

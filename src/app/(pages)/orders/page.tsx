@@ -43,12 +43,13 @@ const OrderPage = async () => {
         <p className="font-bold uppercase">Meus pedidos</p>
       </Badge>
 
-      {/* <div className="flex flex-col gap-4 py-4">
+      <div className="flex flex-col gap-4 py-4">
         {orders.map((order) => (
           <Orderitem key={order.id} order={order} />
         ))}
-      </div> */}
-      <OrdersList orders={orders} />
+      </div>
+      {/* O componente abaixo ainda será implementado para substituir o mapeamento acima */}
+      {/* <OrdersList orders={orders} /> */}
     </div>
   );
 };

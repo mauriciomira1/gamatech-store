@@ -15,7 +15,8 @@ interface OrdersListProps {
   }>;
 }
 
-const OrdersList = ({ orders }: { orders: any }) => {
+// Ainda não implementado
+const OrdersList = ({ orders }: { orders: OrdersListProps[] }) => {
   const [currentOrders, setCurrentOrders] = useState(orders);
   useEffect(() => {
     setCurrentOrders(orders);
@@ -23,7 +24,7 @@ const OrdersList = ({ orders }: { orders: any }) => {
 
   return (
     <div className="flex flex-col gap-4 py-4">
-      {currentOrders.map((currentOrder: any) => (
+      {currentOrders.map((currentOrder) => (
         <Orderitem key={currentOrder.order.id} order={currentOrder.order} />
       ))}
     </div>
