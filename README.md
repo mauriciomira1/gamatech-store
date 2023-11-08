@@ -1,4 +1,17 @@
-## Getting Started
+## E-commerce de produtos de tecnologia
+
+Site de venda de mouses, teclados, headphones, etc com sistema de pagamentos, salvamento de carrinho, resgate de pedidos anteriores e login.
+
+## Foram utilizados:
+1) Typescript
+2) React (com hooks de useContext, useEffect, useState, etc)
+5) Tailwindcss para estilos padronizados
+6) Componentização para código limpo e de fácil manutenção
+7) Spride (para pagamentos)
+8) NextAuth (para login)
+9) Supabase (banco de dados) c/ postgresql
+
+## Outras observações
 
 First, run the development server:
 
