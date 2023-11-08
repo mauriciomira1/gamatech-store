@@ -4,7 +4,6 @@ import Carousel from "../../../components/ui/Carousel";
 import TitleCarousel from "../../../components/ui/TitleCarousel";
 import Categories from "./components/categories";
 import Link from "next/link";
-import BannersComputer from "./components/bannerComputer";
 import BannerPC from "./components/bannerPC";
 
 export default async function Home() {
@@ -35,15 +34,6 @@ export default async function Home() {
       <div className="flex w-full items-center justify-center max-md:hidden">
         <BannerPC src="/pc-banner-home-01.jpg" alt="Ofertas" href="/deals" />
       </div>
-      {/* <div className="pt-7 md:hidden">
-        <Link href="/deals">
-          <Banner
-            src="/banner-home-01.png"
-            alt="Até 55% de desconto só esse mês"
-            priority
-          />
-        </Link>
-      </div> */}
 
       <Categories />
 
