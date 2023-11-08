@@ -2,7 +2,7 @@
 
 Site de venda de mouses, teclados, headphones, etc com sistema de pagamentos, salvamento de carrinho, resgate de pedidos anteriores e login.
 
-# Link da vercel: https://gamatech-store.vercel.app/
+## Link da vercel: https://gamatech-store.vercel.app/
 
 ## Foram utilizados:
 1) Typescript
