@@ -39,6 +39,8 @@ export const POST = async (request: Request) => {
         status: "PAYMENT_CONFIRMED",
       },
     });
+    console.log(lineItems);
   }
+
   return NextResponse.json({ received: true });
 };
