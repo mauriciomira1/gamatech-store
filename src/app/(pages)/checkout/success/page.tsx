@@ -1,4 +1,5 @@
-import { BadgeCheckIcon } from "lucide-react";
+import { ArrowLeftIcon, BadgeCheckIcon } from "lucide-react";
+import Link from "next/link";
 
 const Success = () => {
   return (
@@ -9,6 +10,12 @@ const Success = () => {
         Obrigado por escolher a GamaTech Store. Esperamos que você tenha tido
         uma ótima experiência.
       </p>
+      <Link
+        href="/"
+        className="mt-3 flex items-center justify-center gap-2 rounded bg-primary px-3 py-1.5 hover:bg-purple-700"
+      >
+        Voltar para Início <ArrowLeftIcon />
+      </Link>
     </div>
   );
 };
