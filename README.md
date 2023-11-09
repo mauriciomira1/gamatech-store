@@ -32,6 +32,7 @@ npm install
 7) Spride (para pagamentos)
 8) NextAuth (para login)
 9) Supabase (banco de dados) c/ postgresql
+10) Autenticação com Google
 
 ## App Screenshots
 
