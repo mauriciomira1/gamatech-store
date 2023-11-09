@@ -14,7 +14,7 @@ const CarouselPhotos = ({ imageUrls, name }: CarouselPhotosProps) => {
   return (
     // Foto de capa
     <div className="flex flex-col items-center">
-      <div className="flex min-h-[300px] w-96 flex-col items-center justify-center bg-accent max-sm:w-full sm:mt-6 sm:rounded">
+      <div className="flex h-[300px] w-96 flex-col items-center justify-center bg-accent max-sm:w-full sm:mt-6 sm:rounded lg:h-[450px] lg:w-[600px]">
         <Image
           src={image}
           alt={name}
@@ -30,7 +30,7 @@ const CarouselPhotos = ({ imageUrls, name }: CarouselPhotosProps) => {
       </div>
 
       {/* // Carrossel */}
-      <div className="mt-4 flex min-h-[77px] gap-4 px-4">
+      <div className="mt-4 flex h-[100px] gap-4 px-4 lg:h-[150px]">
         {imageUrls.map((imageUrl) => (
           <div
             key={imageUrl}
