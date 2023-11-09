@@ -27,12 +27,13 @@ npm install
 ## Principais tecnologias e bibliotecas implementadas:
 1) Typescript
 2) React (com hooks de useContext, useEffect, useState, etc)
-5) Tailwindcss para estilos padronizados
-6) Componentização para código limpo e de fácil manutenção
-7) Spride (para pagamentos)
-8) NextAuth (para login)
-9) Supabase (banco de dados) c/ postgresql
-10) Autenticação com Google
+3) Prisma
+4) Tailwindcss para estilos padronizados
+5) Componentização para código limpo e de fácil manutenção
+6) Spride (para pagamentos)
+7) NextAuth (para login)
+8) Supabase (banco de dados) c/ postgresql
+9) Autenticação com Google
 
 ## App Screenshots
 
