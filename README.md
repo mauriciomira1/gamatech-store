@@ -4,7 +4,7 @@
 
 Site de venda de mouses, teclados, headphones, etc com sistema de pagamentos, salvamento de carrinho, resgate de pedidos anteriores e login.
 
-**Variáveis de ambiente**
+## Variáveis de ambiente
 Altere o arquivo '.env-example' para '.env', e insira as seguintes variáveis de ambiente:
 ```
 DATABASE_URL=
