@@ -1,5 +1,6 @@
-# E-commerce de loja de produtos de informática
+# GamaTech Store
 
+**E-commerce de loja de produtos de informática**
 Site de venda de mouses, teclados, headphones, etc com sistema de pagamentos, salvamento de carrinho, resgate de pedidos anteriores e login.
 
 **Variáveis de ambiente**
