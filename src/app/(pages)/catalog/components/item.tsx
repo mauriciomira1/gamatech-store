@@ -19,7 +19,7 @@ const Item = ({ category }: ItemProps) => {
           sizes="100vw"
           src={category.imageUrl}
           alt={category.name}
-          className="w-3/5"
+          className="h-5/6 max-h-full w-auto max-[540px]:h-auto max-[540px]:w-3/5"
         />
       </div>
       <div className="flex h-11 w-full items-center justify-center rounded-b-lg bg-secondary text-sm font-bold">

@@ -145,19 +145,26 @@ const Header = () => {
           </h1>
         </Link>
 
-        <Sheet>
-          <SheetTrigger asChild>
+        <div className="flex gap-4">
+          <Link href="/orders">
             <Button size="icon" variant="outline" className="relative">
-              <ShoppingCart />
-              {products.length > 0 && (
-                <div className="absolute -right-2 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-red-600 text-xs font-bold">
-                  <span>{products.length}</span>
-                </div>
-              )}
+              <PackageSearchIcon />
             </Button>
-          </SheetTrigger>
-          <Cartmenu />
-        </Sheet>
+          </Link>
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button size="icon" variant="outline" className="relative">
+                <ShoppingCart />
+                {products.length > 0 && (
+                  <div className="absolute -right-2 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-red-600 text-xs font-bold">
+                    <span>{products.length}</span>
+                  </div>
+                )}
+              </Button>
+            </SheetTrigger>
+            <Cartmenu />
+          </Sheet>
+        </div>
       </Card>
     </div>
   );

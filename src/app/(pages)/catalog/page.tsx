@@ -12,7 +12,9 @@ const Catalog = async () => {
         <ShapesIcon size={16} />
         Catálogo
       </Badge>
-      <CatalogItems />
+      <div className="flex justify-center">
+        <CatalogItems />
+      </div>
     </div>
   );
 };

@@ -9,14 +9,16 @@ interface BannerPCProps {
 
 const BannerPC = ({ href, alt, src }: BannerPCProps) => {
   return (
-    <Link href={href} className="w-full">
+    <Link href={href} className="flex w-full items-center justify-center">
       <Image
         alt={alt}
         src={src}
         width={0}
         height={0}
         sizes="100vw"
-        className="h-auto w-full object-cover"
+        className="h-auto w-full object-cover lg:w-[1000px] lg:rounded-2xl"
+        quality={100}
+        priority
       />
     </Link>
   );

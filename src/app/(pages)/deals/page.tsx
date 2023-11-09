@@ -24,7 +24,7 @@ const Deals = async () => {
           <p className="font-bold uppercase">Ofertas</p>
         </Badge>
       </div>
-      <div className="grid grid-cols-2 gap-6">
+      <div className="grid grid-cols-2 gap-6 md:grid-cols-3 md:gap-10 lg:grid-cols-4">
         {dealsProducts.map((deal) => (
           <CardProduct product={ProductWithTotalPrice(deal)} key={deal.id} />
         ))}

@@ -31,9 +31,13 @@ export default async function Home() {
 
   return (
     <div className="flex w-full flex-col gap-7">
-      <div className="flex w-full items-center justify-center max-md:hidden">
-        <BannerPC src="/pc-banner-home-01.jpg" alt="Ofertas" href="/deals" />
+      <div className="flex w-full items-center justify-center pt-8 max-md:hidden">
+        <BannerPC src="/pc-banner-home-01.png" alt="Ofertas" href="/deals" />
       </div>
+
+      <Link href="/category/deals" className="md:hidden">
+        <Banner src="/banner-home-01.png" alt="Até 55% de desconto" />
+      </Link>
 
       <Categories />
 
@@ -46,7 +50,7 @@ export default async function Home() {
 
       <div className="flex w-full items-center justify-center max-md:hidden">
         <BannerPC
-          src="/pc-banner-home-02.jpg"
+          src="/pc-banner-home-02.png"
           alt="Ofertas em mouses"
           href="/category/mouses"
         />
@@ -66,7 +70,7 @@ export default async function Home() {
 
       <div className="flex w-full items-center justify-center max-md:hidden">
         <BannerPC
-          src="/pc-banner-home-03.jpg"
+          src="/pc-banner-home-03.png"
           alt="Ofertas em fones de ouvido"
           href="/category/headphones"
         />
