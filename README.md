@@ -41,7 +41,4 @@ npm install
 
 
 
-## Link da vercel: https://gamatech-store.vercel.app/
-
-<!-- IMPLEMENTAR
- 1) Exclusão de pedido -->
+### Link da vercel: https://gamatech-store.vercel.app/
